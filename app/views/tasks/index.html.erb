@@ -1,18 +1,19 @@
-<h1>タスクリスト一覧</h1>
+<% if logged_in? %>
 
-<ul>
+<%= form_with(model: @task, local:true ) do |f| %>
 
-<% @tasks.each do |task| %>
-<li>
-<%= link_to task.id,task %>
-:
-<%= task.status %>
-&gt;
-<%= task.content %>
-</li>
+<%= f.text_area :content%>
+
+<%= f.submit 'Post' %>
 
 <% end %>
 
-</ul>
+<%= render 'tasks/tasks',tasks: @tasks %>
 
-<%= link_to '新規タスクを投稿', new_task_path%>
+<% else %>
+
+<h1>Tasklists</h1>
+
+<%= link_to 'Sign up now!!',signup_path %>
+
+<% end %> 

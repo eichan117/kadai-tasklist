@@ -1,13 +1,7 @@
-<h1>id:
-<%= @task.id %>
-のタスクリスト詳細ページ</h1>
+<h1>id: <%= @task.id %> のタスクリスト詳細ページ</h1>
 
-<p>ステータス:
-<%= @task.status %>
-</p>
-<p>タスク:
-<%= @task.content %>
-</p>
+<p>ステータス:<%= @task.status %></p>
+<p>タスク: <%= @task.content %></p>
 
 <%= link_to '一覧にもどる', tasks_path %>
 

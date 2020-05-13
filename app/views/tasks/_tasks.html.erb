@@ -1,15 +1,19 @@
 <ul>
+
 <% tasks.each do |tasks| %>
-  <li><img src="<%= gravatar_url(tasks.user,{size:50}) %>">
+ 
+ <li><img src="<%= gravatar_url(tasks.user,{size:50}) %>">
     <%= link_to tasks.user.name,user_path(tasks.user) %>
-  <span>posted at <%= tasks.created_at %></span>
+ <span>posted at <%= tasks.created_at %></span>
   
   <p><%= tasks.content %></p>
   
-  </li>
+ </li>
+
 <%= link_to 'Delete',tasks,method: :delete,data: {confirm: 'You sure?'} %>
   
 <% end %>  
+
 <%= paginate tasks %>
 
 </ul>

@@ -1,18 +1,10 @@
 <% if logged_in? %>
 
-<%= form_with(model: @task, local:true ) do |f| %>
-
-<%= f.text_area :content%>
-
-<%= f.submit 'Post' %>
-
-<% end %>
-
 <%= render 'tasks/tasks',tasks: @tasks %>
 
-<% else %>
+<%= link_to 'タスクを投稿する',new_task_path %>
 
-<h1>Tasklists</h1>
+<% else %>
 
 <%= link_to 'Sign up now!!',signup_path %>
 

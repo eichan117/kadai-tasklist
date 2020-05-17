@@ -1,21 +1,17 @@
+<h1>タスク一覧</h1>
 <ul>
 
-<% tasks.each do |tasks| %>
+<% @tasks.each do |tasks| %>
  
- <li><img src="<%= gravatar_url(tasks.user,{size:50}) %>">
-    <%= link_to tasks.user.name,user_path(tasks.user) %>
+ <li><%= link_to tasks.id,tasks %>
  <span>posted at <%= tasks.created_at %></span>
-  
   <p><%= tasks.content %></p>
-  
  </li>
 
-<%= link_to 'Delete',tasks,method: :delete,data: {confirm: 'You sure?'} %>
-  
 <% end %>  
-
-<%= paginate tasks %>
 
 </ul>
 
 <%= link_to 'Logout',login_path %>
+
+<%= link_to 'タスクを投稿する',new_task_path %>

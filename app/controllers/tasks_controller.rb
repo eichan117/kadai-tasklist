@@ -2,10 +2,9 @@ class TasksController < ApplicationController
   before_action :require_user_logged_in
   before_action :current_user
  def index
-  if logged_in?
    @tasks = current_user.tasks
-  end 
- end
+ end 
+
   def show
    @task = Task.find(params[:id])
   end

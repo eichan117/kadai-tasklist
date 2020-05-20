@@ -8,6 +8,8 @@ module SessionsHelper
  end
     
  def logged_in?
-   !current_user.nil?
+   # ログインしてない場合にはnilを返す
+   !!current_user
+   
  end    
 end

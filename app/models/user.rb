@@ -7,12 +7,4 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :tasks
-  def like(micropost)
-   favorites.find_or_create_by(micropost_id: micropost.id)
-  end
-  
-  def unlike(micropost)
-   favorite = favorites.find_by(micropost_id: micropost.id)
-   favorite.destroy if favorite
-  end 
 end
